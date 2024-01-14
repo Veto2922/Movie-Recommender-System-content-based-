@@ -12,7 +12,7 @@ This is a great place to start digging into those questions, with data on the pl
 
 The dataset used in this project is obtained from [TMDB Movie Metadata on Kaggle](https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata/data).
 
-### Data Cleaning Summary
+## Data Cleaning Summary
 
 #### Objective
 The purpose of this notebook is to clean and preprocess the movie dataset obtained from TMDB. The dataset includes information about movies, such as plot details, cast, crew, release date, genres, and more.
@@ -42,6 +42,35 @@ The purpose of this notebook is to clean and preprocess the movie dataset obtain
 7. **Handling Outliers:**
    - Explored and visualized potential outliers in the dataset.
    - Decided not to remove outliers in the 'vote_count' column.
+---
+## Feature Engineering Summary
+
+#### Objective
+The Feature Engineering notebook focuses on transforming the selected movie dataset to create meaningful features for building a recommendation system. The goal is to enhance the dataset by handling dictionary columns, text processing, and creating new features.
+
+#### Steps Taken
+
+
+2. **Untangling Dictionary Columns:**
+   - Converted dictionary columns ('genres', 'keywords', 'cast', 'crew') into lists.
+   - Applied functions to extract relevant information from these columns.
+
+3. **Text Processing:**
+   - Processed text data by converting the 'overview' column from a string to a list of words.
+   - Removed spaces from list columns for count vectorization.
+
+4. **Combining Text Features:**
+   - Created a new column 'tags' by combining relevant text features ('overview', 'genres', 'cast', 'keywords', 'Director').
+
+5. **Extracting Movie Year:**
+   - Extracted the release year from the 'release_date' column and created a new 'release_year' column.
+
+6. **Selecting Final Features:**
+   - Selected the final columns for analysis and recommendation.
+
+7. **Converting Tags to String:**
+   - Converted the 'tags' column from a list to a string.
+
 
 ## Project Organization
 
