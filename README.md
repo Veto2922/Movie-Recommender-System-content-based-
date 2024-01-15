@@ -1,6 +1,6 @@
 # Movies Recommendation System
 
-This project aims to build a movie recommendation system using data on plot, cast, crew of several thousand films. It combines features such as cosine similarity and Euclidean distance to provide movie recommendations.
+This project aims to build a movie recommendation system using data on genres,, cast, crew, overview, release_year , runtime , keywords , vote_average , Director of several thousand films. It combines features such as cosine similarity and Euclidean distance to provide movie recommendations.
 
 ## About Dataset
 
