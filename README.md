@@ -70,6 +70,21 @@ The Feature Engineering notebook focuses on transforming the selected movie data
 
 7. **Converting Tags to String:**
    - Converted the 'tags' column from a list to a string.
+  
+---
+## Data preprocessing and similarity matrix:
+
+In this part, we focused on preparing and processing data to build a movie recommendation system. We started by loading a preprocessed dataset and applied text preprocessing techniques, such as stemming, to ensure consistency in representing words with similar meanings. Using Count Vectorization on the tags column, we created a word vector matrix with a limited set of features.
+
+Additionally, we extracted numerical details about movies, including release year, runtime, and vote average, which were then standardized using StandardScaler to make them comparable.
+
+To measure similarity, we employed two different approaches. First, for the word vector matrix, which mainly consists of 0s and 1s, we utilized cosine similarity (or distance) as a metric. For the numerical movie details, we opted for euclidean distance as a measure of similarity due to the continuous nature of the features.
+
+Combining these two similarity matrices, we created a final similarity matrix with a higher weight assigned to the word matrix. This approach aims to provide a more balanced recommendation by considering both textual and numerical features.
+
+For testing the recommendation system, we implemented a simple function, `recommend(movie)`, which returns the top 10 similar movies based on the final similarity matrix. As a result, users can input a movie title, and the system will output relevant recommendations.
+
+Finally, to ensure the reusability of the similarity matrix, we saved it using the joblib library. The entire process is designed to enhance the accuracy and relevance of movie recommendations, offering users a personalized and comprehensive movie suggestion experience.
 
 
 ## Project Organization
