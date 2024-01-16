@@ -9,8 +9,8 @@ import requests
 
 
 
-MOVIES = r'models\movies_with_poster.pkl'
-SIM_MATRIX = r'models\similarity_matrix.pkl'
+MOVIES = r'models/movies_with_poster.pkl'
+SIM_MATRIX = r'models/similarity_matrix.pkl'
 
 
 
