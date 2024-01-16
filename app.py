@@ -21,7 +21,7 @@ def main():
 
     # Display movie posters in rows and columns with movie details
     st.title('Top Movies')
-    num_columns = 5  # Number of columns for the posters
+    num_columns = 6  # Number of columns for the posters
 
     # Split the screen into columns
     columns = st.columns(num_columns)
