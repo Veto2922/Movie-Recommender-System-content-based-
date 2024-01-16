@@ -1,7 +1,64 @@
 # Movies Recommendation System
 
-This project aims to build a movie recommendation system using data on genres,, cast, crew, overview, release_year , runtime , keywords , vote_average , Director of several thousand films. It combines features such as cosine similarity and Euclidean distance to provide movie recommendations.
+This project aims to build a movie recommendation system based on popularity and content-based filtering, using data on genres, cast, crew, overview, release_year , runtime , keywords , vote_average , Director of several thousand films. It combines features such as cosine similarity and Euclidean distance to provide movie recommendations.
+---
+## About the website for this project
 
+### Overview
+
+This Streamlit application serves as the frontend for a movie recommendation system based on content-based filtering. The app provides an interactive interface for users to explore top movies and discover similar films based on their preferences.
+
+![image](https://github.com/Veto2922/Movie-Recommender-System-content-based-/assets/114834171/24883710-1dc3-4c6c-96cd-f4ca59c2b481)
+
+
+
+### Features
+
+1. **Top Movies Display:**
+   - The home page displays the top movies, showcasing movie posters along with key details such as release year, runtime, and vote average.
+   - Users can click on a movie poster to view recommendations for similar movies.
+
+2. **Movie Recommendations:**
+   - Upon clicking a movie poster, the app presents a sidebar with movie recommendations similar to the selected film.
+   - The sidebar displays posters and details for each recommended movie.
+
+3. **Developer Information:**
+   - The footer includes information about the developer, Abdelrahman Mohamed, and provides links to LinkedIn and GitHub.
+
+
+### How to Use
+
+1. **Installation:**
+   - Clone the repository to your local machine:
+     ```bash
+     git clone https://github.com/Veto2922/Movie-Recommender-System-content-based-.git
+     ```
+
+2. **Navigate to the App:**
+   - Change directory to the app folder:
+     ```bash
+     cd Movie-Recommender-System-content-based-
+     ```
+
+3. **Install Dependencies:**
+   - Install the required Python dependencies:
+     ```bash
+     pip install -r requirements.txt
+     ```
+
+4. **Run the App:**
+   - Execute the following command in your terminal:
+     ```bash
+     streamlit run app.py
+     ```
+   - The app will open in your default web browser.
+
+5. **Explore Recommendations:**
+   - Click on the movie posters to explore recommendations for similar movies.
+   - View movie details and discover new films based on your preferences.
+
+
+---
 ## About Dataset
 
 What can we say about the success of a movie before it is released? Are there certain companies (Pixar?) that have found a consistent formula? Given that major films costing over $100 million to produce can still flop, this question is more important than ever to the industry. Film aficionados might have different interests. Can we predict which films will be highly rated, whether or not they are a commercial success?
