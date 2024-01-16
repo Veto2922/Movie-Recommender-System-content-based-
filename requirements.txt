@@ -1,12 +1,12 @@
 # local package
-pandas
+pandas==1.5.3
 numpy
 matplotlib
 seaborn
 nltk
 scikit-learn
 streamlit
-joblib
+joblib==1.2.0
 -e .
 
 # external requirements
