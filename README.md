@@ -8,6 +8,8 @@ This project aims to build a movie recommendation system based on popularity and
 
 This Streamlit application serves as the frontend for a movie recommendation system based on content-based filtering. The app provides an interactive interface for users to explore top movies and discover similar films based on their preferences.
 
+Website link : https://movie-recommender-sys2.streamlit.app/
+
 ![image](https://github.com/Veto2922/Movie-Recommender-System-content-based-/assets/114834171/24883710-1dc3-4c6c-96cd-f4ca59c2b481)
 
 
