@@ -1,4 +1,13 @@
 # local package
+pandas
+numpy
+ast
+matplotlib
+seaborn
+nltk
+scikit-learn
+streamlit
+joblib
 -e .
 
 # external requirements
