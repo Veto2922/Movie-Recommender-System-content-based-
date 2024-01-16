@@ -19,7 +19,7 @@
 
 ## About the Project
 
-This project is dedicated to constructing an advanced movie recommendation system by leveraging popularity and content-based filtering. The model integrates diverse data features, such as genres, cast, crew, plot overview, release year, runtime, keywords, vote average, and director information, obtained from a comprehensive dataset of several thousand films. The recommendation system employs advanced techniques like cosine similarity and Euclidean distance to enhance the accuracy and personalization of movie suggestions.
+This project is dedicated to constructing an advanced movie recommendation system by leveraging popularity and content-based filtering. The model integrates diverse data features, such as genres, cast, crew, overview, release year, runtime, keywords, vote average, and director information, obtained from a comprehensive dataset of several thousand films. The recommendation system employs advanced techniques like cosine similarity and Euclidean distance to enhance the accuracy and personalization of movie suggestions.
 
 ### Website Overview
 
