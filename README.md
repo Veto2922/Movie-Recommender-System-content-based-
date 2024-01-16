@@ -1,34 +1,50 @@
-# Movies Recommendation System
+# Movie Recommendation System
 
-This project aims to build a movie recommendation system based on popularity and content-based filtering, using data on genres, cast, crew, overview, release_year , runtime , keywords , vote_average , Director of several thousand films. It combines features such as cosine similarity and Euclidean distance to provide movie recommendations.
+## Content
+
+1. [About the Project](#about-the-project)
+   - [Website Overview](#website-overview)
+   - [Features](#features)
+   - [How to Use](#how-to-use)
+
+2. [About the Dataset](#about-the-dataset)
+   - [Data Cleaning Summary](#data-cleaning-summary)
+   - [Feature Engineering Summary](#feature-engineering-summary)
+
+3. [Data Preprocessing and Similarity Matrix](#data-preprocessing-and-similarity-matrix)
+
+4. [Project Organization](#project-organization)
+
 ---
-## About the website for this project
 
-### Overview
+## About the Project
 
-This Streamlit application serves as the frontend for a movie recommendation system based on content-based filtering. The app provides an interactive interface for users to explore top movies and discover similar films based on their preferences.
+This project is dedicated to constructing an advanced movie recommendation system by leveraging popularity and content-based filtering. The model integrates diverse data features, such as genres, cast, crew, plot overview, release year, runtime, keywords, vote average, and director information, obtained from a comprehensive dataset of several thousand films. The recommendation system employs advanced techniques like cosine similarity and Euclidean distance to enhance the accuracy and personalization of movie suggestions.
 
-Website link : https://movie-recommender-sys2.streamlit.app/
+### Website Overview
 
-![image](https://github.com/Veto2922/Movie-Recommender-System-content-based-/assets/114834171/24883710-1dc3-4c6c-96cd-f4ca59c2b481)
+#### Overview
 
+This Streamlit application serves as the frontend for the movie recommendation system, offering users an interactive experience to explore top movies and discover similar films based on their preferences.
 
+Website Link: [Movie Recommender System](https://movie-recommender-sys2.streamlit.app/)
 
-### Features
+![Movie Recommender System](https://github.com/Veto2922/Movie-Recommender-System-content-based-/assets/114834171/24883710-1dc3-4c6c-96cd-f4ca59c2b481)
+
+#### Features
 
 1. **Top Movies Display:**
-   - The home page displays the top movies, showcasing movie posters along with key details such as release year, runtime, and vote average.
-   - Users can click on a movie poster to view recommendations for similar movies.
+   - The home page showcases top movies with posters, release year, runtime, and vote average.
+   - Users can click on a movie poster to view recommendations for similar films.
 
 2. **Movie Recommendations:**
-   - Upon clicking a movie poster, the app presents a sidebar with movie recommendations similar to the selected film.
+   - Clicking a movie poster opens a sidebar with recommendations similar to the selected film.
    - The sidebar displays posters and details for each recommended movie.
 
 3. **Developer Information:**
-   - The footer includes information about the developer, Abdelrahman Mohamed, and provides links to LinkedIn and GitHub.
+   - The footer provides information about the developer, Abdelrahman Mohamed, with links to LinkedIn and GitHub.
 
-
-### How to Use
+#### How to Use
 
 1. **Installation:**
    - Clone the repository to your local machine:
@@ -56,22 +72,14 @@ Website link : https://movie-recommender-sys2.streamlit.app/
    - The app will open in your default web browser.
 
 5. **Explore Recommendations:**
-   - Click on the movie posters to explore recommendations for similar movies.
+   - Click on movie posters to explore recommendations for similar movies.
    - View movie details and discover new films based on your preferences.
 
+## About the Dataset
 
----
-## About Dataset
+This project utilizes a dataset obtained from [TMDB Movie Metadata on Kaggle](https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata/data). The dataset includes comprehensive information about movies, covering plot details, cast, crew, release date, genres, and more.
 
-What can we say about the success of a movie before it is released? Are there certain companies (Pixar?) that have found a consistent formula? Given that major films costing over $100 million to produce can still flop, this question is more important than ever to the industry. Film aficionados might have different interests. Can we predict which films will be highly rated, whether or not they are a commercial success?
-
-This is a great place to start digging into those questions, with data on the plot, cast, crew, budget, and revenues of several thousand films.
-
-### Data source
-
-The dataset used in this project is obtained from [TMDB Movie Metadata on Kaggle](https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata/data).
-
-## Data Cleaning Summary
+### Data Cleaning Summary
 
 #### Objective
 The purpose of this notebook is to clean and preprocess the movie dataset obtained from TMDB. The dataset includes information about movies, such as plot details, cast, crew, release date, genres, and more.
@@ -101,104 +109,93 @@ The purpose of this notebook is to clean and preprocess the movie dataset obtain
 7. **Handling Outliers:**
    - Explored and visualized potential outliers in the dataset.
    - Decided not to remove outliers in the 'vote_count' column.
----
-## Feature Engineering Summary
+
+### Feature Engineering Summary
 
 #### Objective
 The Feature Engineering notebook focuses on transforming the selected movie dataset to create meaningful features for building a recommendation system. The goal is to enhance the dataset by handling dictionary columns, text processing, and creating new features.
 
 #### Steps Taken
 
-
-2. **Untangling Dictionary Columns:**
+1. **Untangling Dictionary Columns:**
    - Converted dictionary columns ('genres', 'keywords', 'cast', 'crew') into lists.
    - Applied functions to extract relevant information from these columns.
 
-3. **Text Processing:**
+2. **Text Processing:**
    - Processed text data by converting the 'overview' column from a string to a list of words.
    - Removed spaces from list columns for count vectorization.
 
-4. **Combining Text Features:**
+3. **Combining Text Features:**
    - Created a new column 'tags' by combining relevant text features ('overview', 'genres', 'cast', 'keywords', 'Director').
 
-5. **Extracting Movie Year:**
+4. **Extracting Movie Year:**
    - Extracted the release year from the 'release_date' column and created a new 'release_year' column.
 
-6. **Selecting Final Features:**
+5. **Selecting Final Features:**
    - Selected the final columns for analysis and recommendation.
 
-7. **Converting Tags to String:**
+6. **Converting Tags to String:**
    - Converted the 'tags' column from a list to a string.
-  
----
-## Data preprocessing and similarity matrix:
 
-In this part, we focused on preparing and processing data to build a movie recommendation system. We started by loading a preprocessed dataset and applied text preprocessing techniques, such as stemming, to ensure consistency in representing words with similar meanings. Using Count Vectorization on the tags column, we created a word vector matrix with a limited set of features.
+## Data Preprocessing and Similarity Matrix
 
-Additionally, we extracted numerical details about movies, including release year, runtime, and vote average, which were then standardized using StandardScaler to make them comparable.
+This section focuses on preparing and processing data to build a movie recommendation system. The process involves loading a preprocessed dataset, applying text preprocessing techniques, such as stemming, and using Count Vectorization on the tags column to create a word vector matrix. Numerical details about movies, including
 
-To measure similarity, we employed two different approaches. First, for the word vector matrix, which mainly consists of 0s and 1s, we utilized cosine similarity (or distance) as a metric. For the numerical movie details, we opted for euclidean distance as a measure of similarity due to the continuous nature of the features.
+release year, runtime, and vote average, were extracted and standardized using StandardScaler. Two similarity measures were employed: cosine similarity for the word vector matrix and Euclidean distance for numerical movie details.
 
-Combining these two similarity matrices, we created a final similarity matrix with a higher weight assigned to the word matrix. This approach aims to provide a more balanced recommendation by considering both textual and numerical features.
+To ensure a balanced recommendation, a final similarity matrix was created by combining these two similarity matrices, with higher weight assigned to the word matrix. This approach provides users with a more comprehensive and personalized movie suggestion experience.
 
-For testing the recommendation system, we implemented a simple function, `recommend(movie)`, which returns the top 10 similar movies based on the final similarity matrix. As a result, users can input a movie title, and the system will output relevant recommendations.
-
-Finally, to ensure the reusability of the similarity matrix, we saved it using the joblib library. The entire process is designed to enhance the accuracy and relevance of movie recommendations, offering users a personalized and comprehensive movie suggestion experience.
-
+For testing the recommendation system, a simple function named `recommend(movie)` was implemented. Users can input a movie title, and the system will output the top 10 similar movies. The similarity matrix was saved using the joblib library for reusability.
 
 ## Project Organization
 
-    ├── LICENSE
-    ├── Makefile           <- Makefile with commands like `make data` or `make train`
-    ├── README.md          <- The top-level README for developers using this project.
-    ├── data
-    │   ├── external       <- Data from third-party sources.
-    │   ├── interim        <- Intermediate data that has been transformed.
-    │   ├── processed      <- The final, canonical data sets for modeling.
-    │   └── raw            <- The original, immutable data dump.
-    │
-    ├── docs               <- A default Sphinx project; see sphinx-doc.org for details.
-    │
-    ├── models             <- Trained and serialized models, model predictions, or model summaries.
-    │
-    ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-    │   │                     the creator's initials, and a short `-` delimited description, e.g.,
-    │   │                     `1.0-jqp-initial-data-exploration`.
-    │   ├── 1.0-data-exploration.ipynb  <- Initial data exploration notebook.
-    │   └── ...            <- Additional notebooks for various stages of the project.
-    │
-    ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-    │
-    ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-    │   └── figures        <- Generated graphics and figures to be used in reporting.
-    │
-    ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.,
-    │                         generated with `pip freeze > requirements.txt`.
-    │
-    ├── setup.py           <- Makes the project pip installable (pip install -e .) so src can be imported.
-    ├── src                <- Source code for use in this project.
-    │   ├── __init__.py    <- Makes src a Python module.
-    │   │
-    │   ├── data           <- Scripts to download or generate data.
-    │   │   └── make_dataset.py
-    │   │
-    │   ├── features       <- Scripts to turn raw data into features for modeling.
-    │   │   └── build_features.py
-    │   │
-    │   ├── models         <- Scripts to train models and then use trained models to make
-    │   │   │                 predictions.
-    │   │   ├── train_model.py
-    │   │   └── predict_model.py
-    │   │
-    │   └── visualization  <- Scripts to create exploratory and results-oriented visualizations.
-    │       └── visualize.py
-    │
-    └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io.
-
---------
+```
+├── LICENSE
+├── Makefile           <- Makefile with commands like `make data` or `make train`
+├── README.md          <- The top-level README for developers using this project.
+├── data
+│   ├── external       <- Data from third-party sources.
+│   ├── interim        <- Intermediate data that has been transformed.
+│   ├── processed      <- The final, canonical data sets for modeling.
+│   └── raw            <- The original, immutable data dump.
+│
+├── docs               <- A default Sphinx project; see sphinx-doc.org for details.
+│
+├── models             <- Trained and serialized models, model predictions, or model summaries.
+│
+├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
+│   │                     the creator's initials, and a short `-` delimited description, e.g.,
+│   │                     `1.0-jqp-initial-data-exploration`.
+│   ├── 1.0-data-exploration.ipynb  <- Initial data exploration notebook.
+│   └── ...            <- Additional notebooks for various stages of the project.
+│
+├── references         <- Data dictionaries, manuals, and all other explanatory materials.
+│
+├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
+│   └── figures        <- Generated graphics and figures to be used in reporting.
+│
+├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.,
+│                         generated with `pip freeze > requirements.txt`.
+│
+├── setup.py           <- Makes the project pip installable (pip install -e .) so src can be imported.
+├── src                <- Source code for use in this project.
+│   ├── __init__.py    <- Makes src a Python module.
+│   │
+│   ├── data           <- Scripts to download or generate data.
+│   │   └── make_dataset.py
+│   │
+│   ├── features       <- Scripts to turn raw data into features for modeling.
+│   │   └── build_features.py
+│   │
+│   ├── models         <- Scripts to train models and then use trained models to make
+│   │   │                 predictions.
+│   │   ├── train_model.py
+│   │   └── predict_model.py
+│   │
+│   └── visualization  <- Scripts to create exploratory and results-oriented visualizations.
+│       └── visualize.py
+│
+└── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io.
+```
 
 <small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small>
-
-
-
-
