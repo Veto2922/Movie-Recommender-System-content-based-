@@ -1,7 +1,6 @@
 # local package
 pandas
 numpy
-ast==0.0.2
 matplotlib
 seaborn
 nltk
